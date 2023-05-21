@@ -8,7 +8,7 @@ import schedule
 import time
 
 def act_on_litter_status():
-    page = requests.get("https://www.mijnafvalwijzer.nl/nl/4823ma/202/")
+    page = requests.get("https://www.mijnafvalwijzer.nl/nl/" + env_values["HOME_POSTAL_CODE"] + "/" + env_values["HOME_HOUSE_NUMBER"] + "/")
     soup = BeautifulSoup(page.text)
 
     def tag_check_generator(classValue):
